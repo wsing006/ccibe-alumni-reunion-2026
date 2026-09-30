@@ -20,4 +20,41 @@
 @keyframes arrive{from{opacity:0;transform:translateY(50px) rotate(-4deg) scale(.94)}to{opacity:1;transform:translateY(0) rotate(0) scale(1)}}@keyframes backdrop-in{from{background:#1a1c3100;backdrop-filter:blur(0)}to{background:#1a1c31db;backdrop-filter:blur(8px)}}@keyframes paper-unfold{from{opacity:0;transform:translateY(60px) scale(.82)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:600px){.stage{padding:90px 22px}.envelope{aspect-ratio:1.28}.envelope-brand{top:16px;gap:7px}.envelope-brand img{width:48px;height:48px}.brand-name{font-size:17px;letter-spacing:1px}.anniversary-seal{width:50px;height:50px;border-width:3px;top:61%;}.anniversary-seal strong{font-size:23px}.anniversary-seal>span{font-size:10px;letter-spacing:2px;margin-left:2px}.address{top:75%;gap:12px}.address strong{font-size:21px;letter-spacing:2px}.address>span{font-size:14px;letter-spacing:2px}.occasion{top:86%;font-size:12px;letter-spacing:1px}.envelope-foot{bottom:12px;left:15px;right:15px;font-size:11px;letter-spacing:0}.note-preview{inset:10px 17px 13px;padding:20px 15px}.note-preview img{width:40px;height:40px}.note-preview>span{font-size:14px;letter-spacing:1px;margin:8px 0 17px}.note-preview strong{font-size:26px;letter-spacing:3px}.note-preview em{font-size:17px;letter-spacing:1px}.note-preview i{margin-top:18px}.letter-overlay{padding:18px 14px}.paper{padding:15px 25px 0}.paper-toolbar{font-size:11px;letter-spacing:0;margin-bottom:25px}.paper-toolbar button{font-size:12px}.school-brand{gap:10px;margin-bottom:26px}.school-crest{width:43px;height:43px}.school-name{font-size:19px;letter-spacing:1px}.letter-heading{padding:26px 0 23px}h2{font-size:29px;letter-spacing:2px;line-height:1.6}.eyebrow{font-size:12px;margin-bottom:17px}.prose{font-size:16px;line-height:2;letter-spacing:0}.prose .poem{font-size:16px;padding-left:14px}.signature{font-size:16px;margin-bottom:31px}h3{font-size:24px}dl{grid-template-columns:1fr;gap:22px}.closing p{font-size:21px}}
 @media(max-width:360px){.stage{padding-left:18px;padding-right:18px}.brand-name{font-size:16px}.address strong{font-size:19px}.school-name{font-size:17px}.paper{padding-left:22px;padding-right:22px}}
-@media(prefers-reduced-motion:reduce){.envelope-enter,.letter-overlay,.paper{animation:none}.flap,.anniversary-seal,.note-preview{transition:none}}
+.stage{background:radial-gradient(ellipse at 50% 48%,#30304e 0%,#181a30 56%,#101322 100%)}
+.envelope-enter{position:relative}
+.envelope{color:#f0dcad;filter:drop-shadow(0 28px 32px #07081290)}
+.envelope-back{background:#282446;border-color:#a58956;border-radius:5px}
+.fold-left{background:linear-gradient(115deg,#454061,#27233e)}
+.fold-right{background:linear-gradient(245deg,#454061,#27233e)}
+.fold-bottom{background:linear-gradient(180deg,#484061,#2b2746)}
+.fold-bottom:after{inset:10px;border-color:#ddbc7652}
+.flap-front{background:linear-gradient(165deg,#4e466b,#322b51 75%);border-top-color:#ddbc7680}
+.flap-back{background:linear-gradient(0deg,#28233e,#514766)}
+.brand-name{color:#f2e3c4;letter-spacing:3px}
+.envelope-brand img{filter:drop-shadow(0 2px 5px #09091840)}
+.theme-title{position:absolute;top:40%;left:0;right:0;z-index:7;font:600 30px/1.4 var(--serif);letter-spacing:6px;color:#f1d59a;text-shadow:0 2px 14px #e8c17f20;transition:opacity .25s}
+.theme-title:before,.theme-title:after{content:'';display:inline-block;width:22px;height:1px;margin:0 16px 9px;background:linear-gradient(90deg,transparent,#d9b977)}
+.theme-title:after{transform:rotate(180deg)}
+.anniversary-seal{color:#332744;background:radial-gradient(circle at 30% 20%,#f5dfb0,#c3a064 85%);border-color:#ebd39d;box-shadow:0 5px 13px #09091755,0 0 0 3px #b6995e30}
+.address{color:#f1e4ca}.address>span{color:#cfb888}
+.occasion{color:#c6af85;font-family:var(--serif);letter-spacing:4px}
+.unsealing .theme-title{opacity:0}
+.envelope-aura{position:absolute;inset:0;pointer-events:none}
+.envelope-aura:before{content:'';position:absolute;inset:-30% -20%;background:radial-gradient(ellipse,#cfa96218,transparent 65%);animation:breathe 6s ease-in-out infinite}
+.halo{position:absolute;inset:-18% -8%;border-radius:50%;border:1px solid #cfab6240;transform:rotate(-12deg);box-shadow:0 0 16px #e8c6810a;animation:halo-drift 10s ease-in-out infinite}
+.halo-two{inset:-25% -4%;transform:rotate(16deg);border-color:#cfab621c;animation-delay:-5s;animation-direction:reverse}
+.envelope-aura i{position:absolute;width:3px;height:3px;border-radius:50%;background:#f4d79b;box-shadow:0 0 9px 2px #e4ba6c55;animation:spark-drift 5s ease-in-out infinite}
+.envelope-aura i:nth-of-type(1){left:-5%;top:20%;animation-delay:-1s}
+.envelope-aura i:nth-of-type(2){left:16%;top:-15%;animation-delay:-3s}
+.envelope-aura i:nth-of-type(3){left:71%;top:-12%;animation-delay:-2s}
+.envelope-aura i:nth-of-type(4){right:-5%;top:28%;animation-delay:-4s}
+.envelope-aura i:nth-of-type(5){right:-4%;top:77%;animation-delay:-.5s}
+.envelope-aura i:nth-of-type(6){left:79%;bottom:-17%;animation-delay:-2.5s}
+.envelope-aura i:nth-of-type(7){left:29%;bottom:-16%;animation-delay:-4.5s}
+.envelope-aura i:nth-of-type(8){left:-6%;top:80%;animation-delay:-1.5s}
+@keyframes spark-drift{0%,100%{opacity:.2;transform:translateY(7px) scale(.7)}50%{opacity:.95;transform:translateY(-9px) scale(1.2)}}
+@keyframes halo-drift{0%,100%{transform:rotate(-12deg) scale(1);opacity:.45}50%{transform:rotate(-6deg) scale(1.035);opacity:.85}}
+@keyframes breathe{0%,100%{opacity:.35;transform:scale(.94)}50%{opacity:1;transform:scale(1.06)}}
+@media(max-width:600px){.theme-title{top:40%;font-size:23px;letter-spacing:3px}.theme-title:before,.theme-title:after{width:13px;margin:0 9px 7px}.brand-name{letter-spacing:1px}.occasion{letter-spacing:3px}.halo{inset:-17% -5%}.halo-two{inset:-23% -2%}}
+@media(max-width:360px){.theme-title{font-size:21px;letter-spacing:2px}}
+@media(prefers-reduced-motion:reduce){.envelope-enter,.letter-overlay,.paper,.halo,.envelope-aura i,.envelope-aura:before{animation:none}.flap,.anniversary-seal,.note-preview,.theme-title{transition:none}}
