@@ -25,9 +25,11 @@ envelope.addEventListener('click', () => {
     revealLetter();
     return;
   }
-  envelope.classList.add('unsealing');
-  timers.push(window.setTimeout(() => envelope.classList.add('extracting'), 680));
-  timers.push(window.setTimeout(revealLetter, 1500));
+  arrival.classList.add('sending');
+  envelope.classList.add('turning');
+  timers.push(window.setTimeout(() => envelope.classList.add('unsealing'), 1150));
+  timers.push(window.setTimeout(() => envelope.classList.add('extracting'), 2050));
+  timers.push(window.setTimeout(revealLetter, 3400));
 });
 function closeLetter() {
   timers.forEach(window.clearTimeout);
@@ -35,7 +37,8 @@ function closeLetter() {
   letter.hidden = true;
   arrival.inert = false;
   document.body.classList.remove('reading');
-  envelope.classList.remove('unsealing', 'extracting');
+  envelope.classList.remove('turning', 'unsealing', 'extracting');
+  arrival.classList.remove('sending');
   envelope.disabled = false;
   envelope.setAttribute('aria-expanded', 'false');
   state = 'closed';
